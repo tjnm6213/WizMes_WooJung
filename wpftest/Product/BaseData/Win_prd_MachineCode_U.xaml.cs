@@ -596,12 +596,44 @@ namespace WizMes_WooJung
         #endregion
 
         #region 입력창 이동 이벤트
+       
+        //텍스트박스
+        private void EnterMoveTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.Key == Key.Enter)
+                {
+                    lib.SendK(Key.Tab, this);
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("예외처리 - " + ee.ToString());
+            }
+        }
+
+        //콤보박스일때
+        private void EnterMoveComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            try
+            {
+                lib.SendK(Key.Tab, this);
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("예외처리 - " + ee.ToString());
+            }
+        }
 
         #endregion
 
-        #region etc
-        //숫자만 입력
-        private void TextBoxCheckIsNumeric_PreviewTextInput(object sender, TextCompositionEventArgs e)
+    
+ 
+
+    #region etc
+    //숫자만 입력
+    private void TextBoxCheckIsNumeric_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             try
             {
@@ -1035,6 +1067,10 @@ namespace WizMes_WooJung
 
         #endregion
 
+        private void TextBoxMachineName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 
     #region CodeView

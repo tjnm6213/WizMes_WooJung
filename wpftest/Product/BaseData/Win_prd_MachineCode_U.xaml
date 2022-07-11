@@ -251,7 +251,8 @@
                         <TextBox x:Name="TextBoxCode" Grid.Column="1" Grid.Row="0" 
                                  Style="{DynamicResource TextBoxInputNecessary}"
                                  Text="{Binding MachineID}"
-                                 PreviewTextInput="TextBoxCheckIsNumeric_PreviewTextInput" />
+                                 PreviewTextInput="TextBoxCheckIsNumeric_PreviewTextInput"
+                                 KeyDown="EnterMoveTextBox_KeyDown"/>
 
                         <!--기계명-->
                         <Label x:Name="LabelMachineName" Grid.Column="0" Grid.Row="1"
@@ -265,7 +266,8 @@
                         </Label>
                         <TextBox x:Name="TextBoxMachineName" Grid.Column="1" Grid.Row="1" 
                                  Style="{DynamicResource TextBoxInputNecessary}" 
-                                 Text="{Binding Machine}"/>
+                                 Text="{Binding Machine}"
+                                 KeyDown="EnterMoveTextBox_KeyDown"/>
 
                         <!--호기-->
                         <Label x:Name="LabelMachineNo" Grid.Column="0" Grid.Row="2" 
@@ -279,7 +281,8 @@
                         </Label>
                         <TextBox x:Name="TextBoxMachineNo" Grid.Column="1" Grid.Row="2"
                                  Style="{DynamicResource TextBoxInputArea}" 
-                                 Text="{Binding MachineNO}"/>
+                                 Text="{Binding MachineNO}"
+                                 KeyDown="EnterMoveTextBox_KeyDown"/>
 
                         <!--설정 타점수-->
                         <Label x:Name="LabelSetHitCount" Grid.Column="0" Grid.Row="3" 
@@ -294,7 +297,8 @@
                         <TextBox x:Name="TextBoxSetHitCount" Grid.Column="1" Grid.Row="3"
                                  Style="{DynamicResource TextBoxInputArea}"
                                  Text="{Binding SetHitCount}"
-                                 PreviewTextInput="TextBoxCheckIsNumeric_PreviewTextInput" />
+                                 PreviewTextInput="TextBoxCheckIsNumeric_PreviewTextInput" 
+                                 KeyDown="EnterMoveTextBox_KeyDown"/>
                         
                         <!--실적 창고 콤보-->
                         <Label x:Name="LabelProductLoc" Grid.Column="0" Grid.Row="4" 
@@ -303,7 +307,9 @@
                                      Style="{DynamicResource ViewBoxSetMaxMinHeight}">
                                 <TextBlock x:Name="TextBlockProductLoc"
                                            Style="{DynamicResource TextBlockInViewBoxInput}"
-                                           Text="실적 창고" />
+                                           Text="실적 창고"
+                                           KeyDown="EnterMoveTextBox_KeyDown"
+                                           />
                             </Viewbox>
                         </Label>
                         <ComboBox x:Name="ComboBoxProductLoc" Grid.Column="1" Grid.Row="4"
